@@ -1,0 +1,71 @@
+body {
+  padding: 0;
+  font-family: "Monaco", monospace;
+}
+
+.controls {
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  background-color: #333;
+  color: #fff;
+}
+
+.controls a, .controls a:visited {
+  text-decoration: none;
+  color: #969;
+}
+
+.controls a:hover {
+  text-decoration: underline;
+}
+
+.controls h1 {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.controls hr {
+  border: white 1px dotted;
+  border-style: none none dotted;
+  margin: auto 1em;
+}
+
+.controls header p {
+  margin-top: 0;
+}
+
+.controls header {
+  margin-left: 1em;
+}
+
+.controls ul {
+  list-style: none;
+  padding-left: 1em;
+}
+
+.controls li {
+  padding-bottom: 0.5em;
+}
+
+.controls div {
+  padding-bottom: 0.25em;
+}
+
+.button {
+  color: #fff;
+  background-color: #969;
+  border-radius: 3px;
+  /*border: 1px solid #fff;*/
+  border: none;
+  padding: 5px 10px;
+  font-size: 1.5em;
+  margin: 0 auto;
+  display: block;
+}
+
+.button:hover {
+  background-color: #858;
+};

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Colorcode</title>
+  <link rel="stylesheet" type="text/css" href="style/normalize.css">
+  <link rel="stylesheet" type="text/css" href="style/colorcode.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <style id="pygmentize-style" type="text/css">@import url("style/pygmentize/default.css");</style>
+  <script type="text/javascript">
+    $(document).ready(function(e) {
+      $('select').on('change', function(e) {
+        e.stopPropagation();
+        var sheet = "@import url(\"style/pygmentize/" + e.target.value +
+          ".css\");"
+        $("#pygmentize-style").text(sheet);
+      });
+
+      $('.controls .background').on('change', function(e) {
+        e.stopPropagation();
+        $('body').css('background-color', e.target.value);
+      });
+    });
+  </script>
+</head>
+<body>
+<div class="controls">
+  <header>
+    <h1>Colorcode</h1>
+    <p>styling <a href="http://pygments.org/">Pygments</a></p>
+  </header>
+  <hr>
+  <ul>
+    <li>
+      <div>Predefined Pygments Style</div>
+      <select>
+        <option value="autumn">autumn</option>
+        <option value="borland">borland</option>
+        <option value="bw">bw</option>
+        <option value="colorful">colorful</option>
+        <option value="default">default</option>
+        <option value="emacs">emacs</option>
+        <option value="friendly">friendly</option>
+        <option value="fruity">fruity</option>
+        <option value="manni">manni</option>
+        <option value="monokai">monokai</option>
+        <option value="murphy">murphy</option>
+        <option value="native">native</option>
+        <option value="pastie">pastie</option>
+        <option value="perldoc">perldoc</option>
+        <option value="rrt">rrt</option>
+        <option value="tango">tango</option>
+        <option value="trac">trac</option>
+        <option value="vim">vim</option>
+        <option value="vs">vs</option>
+      </select>
+    </li>
+    <li>
+      <div>Background </div>
+      <input class="background" type="color"/>
+    </li>
+  </ul>
+  <div>
+    <button class="button">Generate CSS</button>
+  </div>
+</div>
+<div class="highlight">
+  <pre>
+    <span class="k">import</span> <span class="s1">'dart:html'</span><span class="p">;</span>
+    <span class="k">import</span> <span class="s1">'SlideShow.dart'</span><span class="p">;</span>
+
+    <span class="kd">final</span> <span class="n">DivElement</span> <span class="n">background</span> <span class="o">=</span> <span class="n">querySelector</span><span class="p">(</span><span class="s1">'#background'</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">SlideShow</span> <span class="n">slideShow</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SlideShow</span><span class="p">(</span><span class="n">background</span><span class="p">,</span><span class="n">getImages</span><span class="p">());</span>
+    <span class="n">slideShow</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="n">List</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="n">getImages</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="n">images</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="s1">'Cat-wallpaper-21.jpg'</span><span class="p">,</span>
+      <span class="s1">'cute_funny_cat_sliping_a_paper.jpg'</span><span class="p">,</span>
+      <span class="s1">'free-download-funny-cats-and-kittens-wallpapers-cat-videos.jpg'</span><span class="p">,</span>
+      <span class="s1">'funny-cats-wedding-wallpaper.jpg'</span><span class="p">,</span>
+      <span class="s1">'kitten-animal-wallpaper.jpg'</span><span class="p">,</span>
+      <span class="s1">'small-cute-kitty.jpg'</span><span class="p">];</span>
+
+    <span class="k">return</span> <span class="n">images</span><span class="p">.</span><span class="n">map</span><span class="p">((</span><span class="kt">String</span> <span class="n">img</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s1">'images/poes/</span><span class="si">$</span><span class="n">img</span><span class="s1">'</span> <span class="p">).</span><span class="n">toList</span><span class="p">();</span>
+    <span class="p">}</span>
+
+        <span class="k">import</span> <span class="s1">'dart:html'</span><span class="p">;</span>
+    <span class="k">import</span> <span class="s1">'SlideShow.dart'</span><span class="p">;</span>
+
+    <span class="kd">final</span> <span class="n">DivElement</span> <span class="n">background</span> <span class="o">=</span> <span class="n">querySelector</span><span class="p">(</span><span class="s1">'#background'</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">SlideShow</span> <span class="n">slideShow</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SlideShow</span><span class="p">(</span><span class="n">background</span><span class="p">,</span><span class="n">getImages</span><span class="p">());</span>
+    <span class="n">slideShow</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="n">List</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="n">getImages</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="n">images</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="s1">'Cat-wallpaper-21.jpg'</span><span class="p">,</span>
+      <span class="s1">'cute_funny_cat_sliping_a_paper.jpg'</span><span class="p">,</span>
+      <span class="s1">'free-download-funny-cats-and-kittens-wallpapers-cat-videos.jpg'</span><span class="p">,</span>
+      <span class="s1">'funny-cats-wedding-wallpaper.jpg'</span><span class="p">,</span>
+      <span class="s1">'kitten-animal-wallpaper.jpg'</span><span class="p">,</span>
+      <span class="s1">'small-cute-kitty.jpg'</span><span class="p">];</span>
+
+    <span class="k">return</span> <span class="n">images</span><span class="p">.</span><span class="n">map</span><span class="p">((</span><span class="kt">String</span> <span class="n">img</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s1">'images/poes/</span><span class="si">$</span><span class="n">img</span><span class="s1">'</span> <span class="p">).</span><span class="n">toList</span><span class="p">();</span>
+    <span class="p">}</span>
+
+        <span class="k">import</span> <span class="s1">'dart:html'</span><span class="p">;</span>
+    <span class="k">import</span> <span class="s1">'SlideShow.dart'</span><span class="p">;</span>
+
+    <span class="kd">final</span> <span class="n">DivElement</span> <span class="n">background</span> <span class="o">=</span> <span class="n">querySelector</span><span class="p">(</span><span class="s1">'#background'</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">SlideShow</span> <span class="n">slideShow</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SlideShow</span><span class="p">(</span><span class="n">background</span><span class="p">,</span><span class="n">getImages</span><span class="p">());</span>
+    <span class="n">slideShow</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="n">List</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="n">getImages</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="n">images</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="s1">'Cat-wallpaper-21.jpg'</span><span class="p">,</span>
+      <span class="s1">'cute_funny_cat_sliping_a_paper.jpg'</span><span class="p">,</span>
+      <span class="s1">'free-download-funny-cats-and-kittens-wallpapers-cat-videos.jpg'</span><span class="p">,</span>
+      <span class="s1">'funny-cats-wedding-wallpaper.jpg'</span><span class="p">,</span>
+      <span class="s1">'kitten-animal-wallpaper.jpg'</span><span class="p">,</span>
+      <span class="s1">'small-cute-kitty.jpg'</span><span class="p">];</span>
+
+    <span class="k">return</span> <span class="n">images</span><span class="p">.</span><span class="n">map</span><span class="p">((</span><span class="kt">String</span> <span class="n">img</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s1">'images/poes/</span><span class="si">$</span><span class="n">img</span><span class="s1">'</span> <span class="p">).</span><span class="n">toList</span><span class="p">();</span>
+    <span class="p">}</span>
+  </pre>
+</div>
+</body>
+</html>
