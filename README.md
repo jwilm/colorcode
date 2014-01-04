@@ -3,7 +3,7 @@ colorcode
 
 Styling for Pygments markup
 
-![Colorcode UI](https://f.cloud.github.com/assets/4285147/1821025/3377d2e8-711b-11e3-887e-aa7a75c7697e.png)
+![Colorcode UI](https://f.cloud.github.com/assets/4285147/1844083/61286eac-74fc-11e3-9618-a80ee8b10fba.png)
 
 ## Plans
 The following items are considered high priority

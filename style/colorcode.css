@@ -1,47 +1,67 @@
 body {
   padding: 0;
+  margin: 0;
   font-family: "Monaco", monospace;
+  width: 75%;
 }
 
-.controls {
+main {
+  padding: 1em 5em;
+}
+
+h2 {
+  font-size: 1em;
+  margin: 0.25em;
+}
+
+textarea {
+  font-size: 0.7em;
+}
+
+.control {
+  font-size: 0.9em;
+}
+
+.sidebar {
   height: 100%;
   position: fixed;
   right: 0;
   top: 0;
-  width: 300px;
+  width: 25%;
   background-color: #333;
   color: #fff;
+  overflow-y: scroll;
 }
 
-.controls a, .controls a:visited {
+.sidebar a, .sidebar a:visited {
   text-decoration: none;
   color: #969;
 }
 
-.controls a:hover {
+.sidebar a:hover {
   text-decoration: underline;
 }
 
-.controls h1 {
+.sidebar h1 {
   color: #fff;
   margin-bottom: 0;
 }
 
-.controls hr {
+.sidebar hr {
   border: white 1px dotted;
   border-style: none none dotted;
   margin: auto 1em;
 }
 
-.controls header p {
+.sidebar header p {
   margin-top: 0;
 }
 
-.controls header {
-  margin-left: 1em;
+.sidebar header {
+  margin: 1em;
 }
 
-.controls ul {
+/*.controls ul {
   list-style: none;
   padding-left: 1em;
 }
@@ -52,7 +72,7 @@ body {
 
 .controls div {
   padding-bottom: 0.25em;
-}
+}*/
 
 .button {
   color: #fff;
@@ -62,10 +82,81 @@ body {
   border: none;
   padding: 5px 10px;
   font-size: 1.5em;
-  margin: 0 auto;
+  margin: 1em auto;
   display: block;
 }
 
 .button:hover {
   background-color: #858;
-};
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0;
+}
+
+/* Sublists are li.control-group */
+.control-group {
+  border-top: 1px solid #111;
+  background-color: #222;
+  padding: 0.75em 1em;
+  transition: background-color 250ms;
+}
+
+.control-group > input[type="checkbox"] {
+  display: none;
+}
+
+.control-group:last-of-type {
+  border-bottom: 1px solid #111;
+}
+
+.control-group:hover {
+  background-color: #1a1a1a;
+}
+
+.selected, .selected:hover {
+  background-color: #222;
+}
+
+.control-group > label {
+  display: block;
+}
+
+.controls-wrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 500ms ease;
+}
+
+input:checked + .controls-wrap {
+  max-height: 1000px;
+}
+
+.control {
+  margin-bottom: 0.5em;
+}
+
+.control input[type="text"] {
+  width: 40%;
+  padding: 0.25em;
+}
+
+textarea, .control input[type="text"] {
+  outline: none;
+  transition: background-color 250ms ease;
+  background-color: #222;
+  border: 1px solid #111;
+  color: white;
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px #2a2a2a;
+}
+
+.control input[type="text"]:focus {
+  background-color: #444;
+}
+
+.control label {
+  display: block;
+}
