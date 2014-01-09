@@ -1,0 +1,164 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Monaco", monospace;
+  width: 75%;
+}
+
+main {
+  padding: 1em 5em;
+}
+
+h2 {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+textarea {
+  font-size: 0.7em;
+  padding: 0.5em;
+  width: auto;
+  display: block;
+}
+
+.control {
+  font-size: 0.9em;
+}
+
+.sidebar {
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 25%;
+  background-color: #222;
+  color: #fff;
+  overflow-y: scroll;
+}
+
+.sidebar a, .sidebar a:visited {
+  text-decoration: none;
+  color: #969;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.sidebar h1 {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.sidebar hr {
+  border: white 1px dotted;
+  border-style: none none dotted;
+}
+
+.sidebar header p {
+  margin-top: 0;
+}
+
+.sidebar header {
+  margin: 1em;
+}
+
+/*.controls ul {
+  list-style: none;
+  padding-left: 1em;
+}
+
+.controls li {
+  padding-bottom: 0.5em;
+}
+
+.controls div {
+  padding-bottom: 0.25em;
+}*/
+
+.button {
+  color: #fff;
+  background-color: #969;
+  border-radius: 3px;
+  /*border: 1px solid #fff;*/
+  border: none;
+  padding: 5px 10px;
+  font-size: 1.5em;
+  margin: 1em auto;
+  display: block;
+}
+
+.button:hover {
+  background-color: #858;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0;
+}
+
+/* Sublists are li.control-group */
+.control-group {
+  border-top: 1px solid #111;
+  background-color: #222;
+  padding: 0.75em 1em;
+  transition: background-color 250ms;
+}
+
+.control-group > input[type="checkbox"] {
+  display: none;
+}
+
+.control-group:last-of-type {
+  border-bottom: 1px solid #111;
+}
+
+.control-group:hover {
+  background-color: #1a1a1a;
+}
+
+.selected, .selected:hover {
+  background-color: #222;
+}
+
+.control-group > label {
+  display: block;
+}
+
+.controls-wrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 500ms ease;
+}
+
+input:checked + .controls-wrap {
+  max-height: 1000px;
+}
+
+.control {
+  margin-bottom: 0.5em;
+}
+
+.control input[type="text"] {
+  width: 40%;
+  padding: 0.25em;
+}
+
+textarea, .control input[type="text"] {
+  outline: none;
+  transition: background-color 250ms ease;
+  background-color: #333;
+  border: 1px solid #111;
+  color: white;
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px #2a2a2a;
+}
+
+.control input[type="text"]:focus, textarea:focus {
+  background-color: #444;
+}
+
+.control label {
+  display: block;
+}

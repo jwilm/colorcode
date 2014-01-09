@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Colorcode</title>
+  <link rel="stylesheet" type="text/css" href="style/normalize.css">
+  <link rel="stylesheet" type="text/css" href="style/colorcode.css">
+  <script type="text/javascript"
+    src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <style id="pygmentize-style" type="text/css">
+    @import url("style/pygmentize/default.css");
+  </style>
+  <style type="text/css" id="dynamic-style">
+  </style>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<div class="sidebar">
+  <header>
+    <h1>Colorcode</h1>
+    <p>styling <a href="http://pygments.org/">Pygments</a></p>
+    <hr>
+    <h2>Pygments Styles</h2>
+    <select>
+      <option value="autumn">autumn</option>
+      <option value="borland">borland</option>
+      <option value="bw">bw</option>
+      <option value="colorful">colorful</option>
+      <option value="default" selected>default</option>
+      <option value="emacs">emacs</option>
+      <option value="friendly">friendly</option>
+      <option value="fruity">fruity</option>
+      <option value="manni">manni</option>
+      <option value="monokai">monokai</option>
+      <option value="murphy">murphy</option>
+      <option value="native">native</option>
+      <option value="pastie">pastie</option>
+      <option value="perldoc">perldoc</option>
+      <option value="rrt">rrt</option>
+      <option value="tango">tango</option>
+      <option value="trac">trac</option>
+      <option value="vim">vim</option>
+      <option value="vs">vs</option>
+    </select>
+    <h2>CSS</h2>
+    <textarea id="user-style" rows="5">body{
+  background-color: #fff;
+}</textarea>
+  </header>
+
+  <ul class="control-group-list">
+    <li class="control-group selected">
+      <label for="topLevel">Top Level</label>
+      <input type="checkbox" class="dropdown" id="topLevel" checked/>
+      <div class="controls-wrap">
+        <ul class="controls-list">
+          <li class="control">
+            <label for="token-color" data-selector="">Token</label>
+            <input id="token-color" type="color" data-selector="" />
+            <input id="token-text" type="text" />
+          </li>
+          <li class="control">
+            <label data-selector="">Text</label>
+            <input type="color" data-selector="" />
+            <input type="text" />
+          </li>
+          <li class="control">
+            <label data-selector="w">Whitespace</label>
+            <input type="color" data-selector="w" />
+            <input type="text" />
+          </li>
+          <li class="control">
+            <label data-selector="err">Error</label>
+            <input type="color" data-selector="err" />
+            <input type="text" />
+          </li>
+          <li class="control">
+            <label data-selector="x">Other</label>
+            <input type="color" data-selector="x" />
+            <input type="text" />
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="control-group">
+      Keywords
+    </li>
+    <li class="control-group">
+      Name
+    </li>
+    <li class="control-group">
+      Literal
+    </li>
+    <li class="control-group">
+      String
+    </li>
+    <li class="control-group">
+      Number
+    </li>
+    <li class="control-group">
+      Operator
+    </li>
+    <li class="control-group">
+      Punctuation
+    </li>
+    <li class="control-group">
+      Comment
+    </li>
+    <li class="control-group">
+      Generic
+    </li>
+  </ul>
+  <div>
+    <button class="button">Generate CSS</button>
+  </div>
+</div>
+<main>
+<div class="highlight"><pre><span class="nt">body</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;Monaco&quot;</span><span class="o">,</span> <span class="k">monospace</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">main</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.control</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">0.9em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.sidebar</span> <span class="p">{</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">fixed</span><span class="p">;</span>
+  <span class="k">right</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">300px</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="m">#333</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="k">overflow-y</span><span class="o">:</span> <span class="k">scroll</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.sidebar</span> <span class="nt">a</span><span class="o">,</span> <span class="nc">.sidebar</span> <span class="nt">a</span><span class="nd">:visited</span> <span class="p">{</span>
+  <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#969</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.sidebar</span> <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="k">text-decoration</span><span class="o">:</span> <span class="k">underline</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.sidebar</span> <span class="nt">h1</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.sidebar</span> <span class="nt">hr</span> <span class="p">{</span>
+  <span class="k">border</span><span class="o">:</span> <span class="nb">white</span> <span class="m">1px</span> <span class="k">dotted</span><span class="p">;</span>
+  <span class="k">border-style</span><span class="o">:</span> <span class="k">none</span> <span class="k">none</span> <span class="k">dotted</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="k">auto</span> <span class="m">1em</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</main>
+</body>
+</html>
